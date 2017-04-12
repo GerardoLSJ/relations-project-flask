@@ -3,7 +3,7 @@ parejas = []
 
 def createUniverse(parejas):
     '''Crea el universe de todos los elementos de las parejas
-        Recibe como parámetro las parejas ordenadas
+        Recibe como parametro las parejas ordenadas
         Devuelve un arreglo unidimensional
     '''
     universe = []
@@ -27,11 +27,43 @@ def createBinaryMatrix(universe, parejas):
     return binaryMatrix
 
 
-for i in range(0, 3):
+def isReflexive(binaryMatrix):
+    reflexive = True
+    for i in range (0, len(binaryMatrix[0])):
+        if binaryMatrix[i][i] == 0:
+            reflexive = False
+    return reflexive
+
+def isSimetric(binaryMatrix):
+    simetric = True
+    for i in range (0, len(binaryMatrix[0])):
+        for j in range (0, len(binaryMatrix[0])):
+            if binaryMatrix[i][j] != binaryMatrix[j][i]:
+                simetric = False
+    return simetric
+
+def isAsimetric(binaryMatrix):
+    asimetric = False
+    for i in range (0, len(binaryMatrix[0])):
+        for j in range (0, len(binaryMatrix[0])):
+            if i!= j:
+                if binaryMatrix[i][j]== 0 or  binaryMatrix[j][i]== 0:
+                    asimetric = True
+    return asimetric
+
+
+
+
+
+for i in range(0, 6):
     pareja = input("Inserta las parejas ordenadas a,b o no introduzcas nada para terminar\n")
     parejas.append(pareja)
 
 # print(parejas)
 # print(createUniverse(parejas))
-print(createBinaryMatrix(createUniverse(parejas), parejas))
-    
+# print(createBinaryMatrix(createUniverse(parejas), parejas))
+matrix = createBinaryMatrix(createUniverse(parejas), parejas)
+
+print("Es reflexica: " + str(isReflexive(matrix)))
+print("Es simetrica: " + str(isSimetric(matrix)))
+print("Es asimetrica: " + str(isAsimetric(matrix)))
