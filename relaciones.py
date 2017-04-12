@@ -3,7 +3,7 @@ parejas = []
 
 def createUniverse(parejas):
     '''Crea el universe de todos los elementos de las parejas
-        Recibe como parámetro las parejas ordenadas
+        Recibe como parametro las parejas ordenadas
         Devuelve un arreglo unidimensional
     '''
     universe = []
@@ -27,11 +27,28 @@ def createBinaryMatrix(universe, parejas):
     return binaryMatrix
 
 
+def isReflexive(binaryMatrix):
+    reflexive = True
+    for i in range (0, len(binaryMatrix[0])):
+        if binaryMatrix[i][i] == 0:
+            reflexive = False
+    return reflexive
+
+
+
+
+
+
+
+
+
 for i in range(0, 3):
     pareja = input("Inserta las parejas ordenadas a,b o no introduzcas nada para terminar\n")
     parejas.append(pareja)
 
 # print(parejas)
 # print(createUniverse(parejas))
-print(createBinaryMatrix(createUniverse(parejas), parejas))
-    
+# print(createBinaryMatrix(createUniverse(parejas), parejas))
+matrix = createBinaryMatrix(createUniverse(parejas), parejas)
+reflexive = isReflexive(matrix)
+print("es reflexiva: " + str(reflexive))
