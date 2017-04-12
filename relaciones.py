@@ -34,15 +34,28 @@ def isReflexive(binaryMatrix):
             reflexive = False
     return reflexive
 
+def isSimetric(binaryMatrix):
+    simetric = True
+    for i in range (0, len(binaryMatrix[0])):
+        for j in range (0, len(binaryMatrix[0])):
+            if binaryMatrix[i][j] != binaryMatrix[j][i]:
+                simetric = False
+    return simetric
+
+def isAsimetric(binaryMatrix):
+    asimetric = False
+    for i in range (0, len(binaryMatrix[0])):
+        for j in range (0, len(binaryMatrix[0])):
+            if i!= j:
+                if binaryMatrix[i][j]== 0 or  binaryMatrix[j][i]== 0:
+                    asimetric = True
+    return asimetric
 
 
 
 
 
-
-
-
-for i in range(0, 3):
+for i in range(0, 6):
     pareja = input("Inserta las parejas ordenadas a,b o no introduzcas nada para terminar\n")
     parejas.append(pareja)
 
@@ -50,5 +63,7 @@ for i in range(0, 3):
 # print(createUniverse(parejas))
 # print(createBinaryMatrix(createUniverse(parejas), parejas))
 matrix = createBinaryMatrix(createUniverse(parejas), parejas)
-reflexive = isReflexive(matrix)
-print("es reflexiva: " + str(reflexive))
+
+print("Es reflexica: " + str(isReflexive(matrix)))
+print("Es simetrica: " + str(isSimetric(matrix)))
+print("Es asimetrica: " + str(isAsimetric(matrix)))
