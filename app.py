@@ -14,8 +14,14 @@ def hello_name(name):
 @app.route('/api', methods=['POST'])
 def api():
     data  = request.get_json(force=False, silent=False, cache=False)
-    print(data)
-    initMatrix(data)
+    #print(data)
+    arr = []
+    for pair in data:
+        pair = pair.split(',')
+        pair = list(map(int,pair))
+        arr.append(pair)
+
+    initMatrix(arr)
     return jsonify(yourData=data)
 
 

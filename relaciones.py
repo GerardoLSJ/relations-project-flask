@@ -12,6 +12,7 @@ def createUniverse(parejas):
             universe.append(p[0])
         if p[1] not in universe:
             universe.append(p[1])
+    print(universe)
     return universe
 
 def createBinaryMatrix(universe, parejas):
@@ -68,6 +69,7 @@ for i in range(0, 6):
 
 def initMatrix(parejas):
     matrix = createBinaryMatrix(createUniverse(parejas), parejas)
+    print(parejas)
     for row in matrix:
         print(' '.join(map(str,row)) )
     print("Es reflexiva: " + str(isReflexive(matrix)))
