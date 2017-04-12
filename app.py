@@ -8,7 +8,13 @@ def index():
 
 @app.route('/<name>')
 def hello_name(name):
-    return "Hello {}!".format(name)
+    return jsonify(asdf=name)
+
+@app.route('/api', methods=['POST'])
+def api():
+    data  = request.get_json(force=False, silent=False, cache=False)
+    print(data)
+    return jsonify(yourData=data)
 
 
 if __name__ == '__main__':
