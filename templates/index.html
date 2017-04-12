@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html ng-app="RelationsAoo">
-  <head>
-    <title>Wordcount</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <style>
-      .container {
-        max-width: 1000px;
-      }
-    </style>
-  </head>
-    <body ng-controller="MainCtrl">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 col-sm-offset-1">
-          <h1>Wordcount 3001</h1>
-          <br>
-          <form role="form" >
-            <div class="form-group">
-              <input type="text"  class="form-control" ng-model="inputBox" id="url-box"  style="max-width: 300px;"  required>
-            </div>
-            <button  ng-click="getResults()" class="btn btn-default">Submit</button>
-          </form>
-        </div>
-        <div class="col-sm-5 col-sm-offset-1">
-          <h2>Frequencies</h2>
-          <br>
-          <div id="results">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Word</th>
-                  <th>Count</th>
-                </tr>
-              </thead>
-              <tbody>
 
-            </table>
+<head>
+  <title>Relations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <style>
+    .container {
+      max-width: 1000px;
+    }
+  </style>
+</head>
+
+<body ng-controller="MainCtrl">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5 col-sm-offset-1">
+        <h1>Relations 3001</h1>
+        <br>
+        <form role="form">
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="inputBoxes.one" id="url-box" style="max-width: 300px;" required>
           </div>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="inputBoxes.two" id="url-box" style="max-width: 300px;" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="inputBoxes.three" id="url-box" style="max-width: 300px;" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="inputBoxes.four" id="url-box" style="max-width: 300px;" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="inputBoxes.five" id="url-box" style="max-width: 300px;" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="inputBoxes.six" id="url-box" style="max-width: 300px;" required>
+          </div>
+          <button ng-click="getResults()" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+      <div class="col-sm-5 col-sm-offset-1">
+        <h2>Frequencies</h2>
+        <br>
+        <div id="results">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Word</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+
+          </table>
         </div>
       </div>
     </div>
-    <br><br>
-    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
-    <script src="{{ url_for('static', filename='controllers.js') }}"></script>
-  </body>
+  </div>
+  <br><br>
+  <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+  <script src="{{ url_for('static', filename='controllers.js') }}"></script>
+</body>
+
 </html>

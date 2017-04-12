@@ -54,16 +54,23 @@ def isAsimetric(binaryMatrix):
 
 
 
-
+"""
 for i in range(0, 6):
     pareja = input("Inserta las parejas ordenadas a,b o no introduzcas nada para terminar\n")
     parejas.append(pareja)
-
+"""
+#parejas = [[1,2],[2,1],[3,1],[1,3],[4,4],[5,5]]
 # print(parejas)
 # print(createUniverse(parejas))
 # print(createBinaryMatrix(createUniverse(parejas), parejas))
-matrix = createBinaryMatrix(createUniverse(parejas), parejas)
 
-print("Es reflexica: " + str(isReflexive(matrix)))
-print("Es simetrica: " + str(isSimetric(matrix)))
-print("Es asimetrica: " + str(isAsimetric(matrix)))
+#matrix = createBinaryMatrix(createUniverse(parejas), parejas)
+
+def initMatrix(parejas):
+    matrix = createBinaryMatrix(createUniverse(parejas), parejas)
+    for row in matrix:
+        print(' '.join(map(str,row)) )
+    print("Es reflexiva: " + str(isReflexive(matrix)))
+    print("Es simetrica: " + str(isSimetric(matrix)))
+    print("Es asimetrica: " + str(isAsimetric(matrix)))
+

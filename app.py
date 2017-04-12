@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
-app = Flask(__name__)
+from relaciones import *
 
+app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -14,6 +15,7 @@ def hello_name(name):
 def api():
     data  = request.get_json(force=False, silent=False, cache=False)
     print(data)
+    initMatrix(data)
     return jsonify(yourData=data)
 
 
