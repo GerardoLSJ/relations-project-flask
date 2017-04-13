@@ -21,8 +21,8 @@ def api():
         pair = list(map(int,pair))
         arr.append(pair)
 
-    initMatrix(arr)
-    return jsonify(yourData=data)
+    results = initMatrix(arr)
+    return jsonify(data=results)
 
 
 if __name__ == '__main__':

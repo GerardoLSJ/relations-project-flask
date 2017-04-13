@@ -12,7 +12,9 @@
   </style>
 </head>
 
+
 <body ng-controller="MainCtrl">
+  {% raw %}
   <div class="container">
     <div class="row">
       <div class="col-sm-5 col-sm-offset-1">
@@ -41,24 +43,32 @@
         </form>
       </div>
       <div class="col-sm-5 col-sm-offset-1">
-        <h2>Frequencies</h2>
+        <h2>Propiedades</h2>
         <br>
         <div id="results">
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>Word</th>
-                <th>Count</th>
+                <th>Reflexiva</th>
+                <th>Simetrica</th>
+                <th>Asimetrica</th>
               </tr>
             </thead>
             <tbody>
-
+              <tr>
+                <td>{{states.reflexiva}}</td>
+                <td>{{states.simetrica}}</td>
+               <td>{{states.asimetrica}}</td>
+              </tr>
           </table>
         </div>
       </div>
     </div>
   </div>
   <br><br>
+
+  {% endraw %}
+
   <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>

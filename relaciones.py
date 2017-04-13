@@ -75,4 +75,5 @@ def initMatrix(parejas):
     print("Es reflexiva: " + str(isReflexive(matrix)))
     print("Es simetrica: " + str(isSimetric(matrix)))
     print("Es asimetrica: " + str(isAsimetric(matrix)))
+    return {'reflexiva': isReflexive(matrix), 'asimetrica': isAsimetric(matrix), 'simetrica': isSimetric(matrix)}
 
