@@ -4,7 +4,7 @@ app.controller('MainCtrl', function ($scope, $http) {
     $scope.states = {}
 
     $scope.inputBoxes = {
-        one: "1,2,3,4,5,6",
+        one: "1,2,3,4",
         two: "1,1",
 /*        three: "1,1",
         four: "1,1",
