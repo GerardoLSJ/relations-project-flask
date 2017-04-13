@@ -6,7 +6,7 @@ def createUniverse(parejas):
         Recibe como parametro las parejas ordenadas
         Devuelve un arreglo unidimensional
     '''
-    universe = []
+    universe = [] #Almacena el conjunto de elementos
     for p in parejas: 
         if p[0] not in universe:
             universe.append(p[0])
@@ -16,11 +16,11 @@ def createUniverse(parejas):
     return universe
 
 def createBinaryMatrix(universe, parejas):
-    '''Llena la matriz binaria con uno cuando se encuentra el elemento
-        Recibe como parametro todas las parejas ordenadas dadas y el universo de elementos
+    '''Llena la matriz binaria con uno cuando los elementos del universo esan relacionados.
+        Recibe como parametro todas las parejas ordenadas dadas y el universo de elementos.
         Devuelve una matriz binaria
     '''
-    binaryMatrix = [[0 for x in range(0,len(universe))] for y in range(0,len(universe))] 
+    binaryMatrix = [[0 for x in range(0,len(universe))] for y in range(0,len(universe))] #Inicializa en cero matriz nxn
     for p in parejas:
         i = universe.index(p[0])
         j = universe.index(p[1])
@@ -53,7 +53,7 @@ def isAsimetric(binaryMatrix):
     return asimetric
 
 
-
+ 
 
 """
 for i in range(0, 6):
