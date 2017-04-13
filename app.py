@@ -18,7 +18,7 @@ def api():
     arr = []
     for pair in data:
         pair = pair.split(',')
-        pair = list(map(int,pair))
+        #pair = list(map(int,pair))
         arr.append(pair)
 
     results = initMatrix(arr)
