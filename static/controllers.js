@@ -4,18 +4,17 @@ app.controller('MainCtrl', function ($scope, $http) {
     $scope.states = {}
 
     $scope.inputBoxes = {
-        one: "1,1",
-        two: "2,2",
-        three: "3,3",
-        four: "4,4",
-        five: "5,5",
-        six: "6,6",
-        seven: "7,7",
-        eight: "8,8",
-        nine: "9,9",
-        ten: "0,0"
+        one: "1,2,3,4,5,6",
+        two: "1,1",
+/*        three: "1,1",
+        four: "1,1",
+        five: "1,1",
+        six: "1,1",
+        seven: "1,1",
+        eight: "1,1",
+        nine: "1,1",
+        ten: "1,1"*/
     }
-
 
 
     $scope.getResults = function () {

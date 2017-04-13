@@ -7,7 +7,7 @@
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <style>
     .container {
-      max-width: 1000px;
+      max-width: 800px;
     }
   </style>
 </head>
@@ -51,6 +51,9 @@
           <div class="form-group">
             <input type="text" class="form-control" ng-model="inputBoxes.ten" id="url-box" style="max-width: 200px;" required>
           </div>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="inputBoxes.eleven" id="url-box" style="max-width: 200px;" required>
+          </div>
           <button ng-click="getResults()" class="btn btn-default">Submit</button>
         </form>
       </div>
@@ -62,15 +65,21 @@
             <thead>
               <tr>
                 <th>Reflexiva</th>
-                <th>Simetrica</th>
-                <th>Asimetrica</th>
+                <th>Irreflexiva</th>
+                <th>Simétrica</th>
+                <th>Asimétrica</th>
+                <th>Antisimétrica</th>
+                <th>Transitiva</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>{{states.reflexiva}}</td>
+                <td>{{states.irreflexiva}}</td>
                 <td>{{states.simetrica}}</td>
-               <td>{{states.asimetrica}}</td>
+                <td>{{states.asimetrica}}</td>
+                <td>{{states.antisimetrica}}</td>
+               <td>{{states.transitiva}}</td>
               </tr>
           </table>
         </div>
