@@ -88,8 +88,7 @@ def isTransitive(binaryMatrix):
         for j in range (0, len(binaryMatrix[0])):
             for k in range (0, len(binaryMatrix[0])):
                 if((i!=j) and (j!=k)):
-                    if(binaryMatrix[i][j]==1 and binaryMatrix[j][k]==1):
-                        if(binaryMatrix[i][k]!=1):
+                    if(binaryMatrix[i][j]==1 and binaryMatrix[j][k]==1 and binaryMatrix[i][k]!=1):
                             transitive = False
     return transitive
 
