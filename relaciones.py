@@ -116,5 +116,5 @@ def initMatrix(parejas):
     print("Es transitiva: " + str(isTransitive(matrix)))
     
     
-    return {'reflexiva': isReflexive(matrix), 'irreflexiva': isIrreflexive(matrix), 'simetrica': isSymmetric(matrix), 'asimetrica': isAsimetric(matrix), 'antisimetrica': isAntisymmetric(matrix), 'transitiva': isTransitive(matrix)}
+    return {'reflexiva': isReflexive(matrix), 'irreflexiva': isIrreflexive(matrix), 'simetrica': isSymmetric(matrix), 'asimetrica': isAsimetric(matrix), 'antisimetrica': isAntisymmetric(matrix), 'transitiva': isTransitive(matrix), 'parejas':parejas[1:] }
 

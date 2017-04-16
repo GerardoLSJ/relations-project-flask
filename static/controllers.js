@@ -1,7 +1,7 @@
 app.controller('MainCtrl', function ($scope, $http) {
     console.log('MainCtrl')
     $scope.inputBoxes = {}
-    $scope.states = {}
+    $scope.states = []
 
     $scope.inputBoxes = {
         one: "1,2,3,4",
@@ -28,7 +28,7 @@ app.controller('MainCtrl', function ($scope, $http) {
         $http.post('/api', myJson)
             .then((res) => {
                 console.info(res.data)
-                $scope.states = res.data.data;
+                $scope.states.push(res.data.data);
             })
             .catch((e) => {
                 console.error(e)

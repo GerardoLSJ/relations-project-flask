@@ -5,6 +5,8 @@
   <title>Relations</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
   <style>
     .container {
       max-width: 800px;
@@ -15,9 +17,9 @@
 
 <body ng-controller="MainCtrl">
   {% raw %}
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-5 col-sm-offset-1">
+      <div class="col-md-2">
         <h1>Relations 3001</h1>
         <br>
         <form role="form">
@@ -57,7 +59,7 @@
           <button ng-click="getResults()" class="btn btn-default">Submit</button>
         </form>
       </div>
-      <div class="col-sm-5 col-sm-offset-1">
+      <div class="col-md-9">
         <h2>Propiedades</h2>
         <br>
         <div id="results">
@@ -70,25 +72,38 @@
                 <th>Asimétrica</th>
                 <th>Antisimétrica</th>
                 <th>Transitiva</th>
+                <th>parejas</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{{states.reflexiva}}</td>
-                <td>{{states.irreflexiva}}</td>
-                <td>{{states.simetrica}}</td>
-                <td>{{states.asimetrica}}</td>
-                <td>{{states.antisimetrica}}</td>
-               <td>{{states.transitiva}}</td>
+
+              <tr ng-repeat="item in states">
+                <td>
+                  <i class="fa" ng-class="{false:'fa-times', true:'fa-check'}[item.reflexiva]"></i>
+                </td>
+                <td>
+                  <i class="fa" ng-class="{false:'fa-times', true:'fa-check'}[item.irreflexiva]"></i>
+                </td>
+                <td>
+                  <i class="fa" ng-class="{false:'fa-times', true:'fa-check'}[item.simetrica]"></i>
+                </td>
+                <td>
+                  <i class="fa" ng-class="{false:'fa-times', true:'fa-check'}[item.asimetrica]"></i>
+                </td>
+                <td>
+                  <i class="fa" ng-class="{false:'fa-times', true:'fa-check'}[item.antisimetrica]"></i>
+                </td>
+                <td>
+                  <i class="fa" ng-class="{false:'fa-times', true:'fa-check'}[item.transitiva]"></i>
+                </td>
+                <td style="font-size:smaller">{{item.parejas }}</td>
               </tr>
           </table>
         </div>
       </div>
     </div>
   </div>
-  <br><br>
-
-  {% endraw %}
+  <br><br> {% endraw %}
 
   <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
