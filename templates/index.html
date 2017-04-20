@@ -17,6 +17,9 @@
     .fa-times{
       color: red
     }
+    .red{
+      color: red;
+    }
   </style>
 </head>
 
@@ -43,7 +46,8 @@
                     <br><br>
           <div ng-repeat="inputBox in inputBoxes track by $index">
             <div class="form-group">
-              <input type="text" class="form-control" ng-model= "inputBoxes[$index]" id="url-box" style="max-width: 200px;" required>
+              <input type="text" class="form-control" ng-model= "inputBoxes[$index]" ng-change = "updatedPair($index)" id="url-box" style="max-width: 200px;" required>
+              <span class="red" ng-bind = "errorBoxes[$index]"></span>
             </div>
           </div>
           <div ng-bind = "inputBoxes"></div>
