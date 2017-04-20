@@ -1,25 +1,25 @@
 app.controller('MainCtrl', function ($scope, $http) {
     console.log('MainCtrl')
-    $scope.inputBoxes = {}
-    $scope.states = []
+    $scope.states = [];
+    $scope.inputBoxes = [];
+    $scope.inputCounter = 0;
+    $scope.htmlString = '';
 
-    $scope.inputBoxes = {
-        one: "1,2,3,4",
-        two: "1,1",
-        /*        three: "1,1",
-                four: "1,1",
-                five: "1,1",
-                six: "1,1",
-                seven: "1,1",
-                eight: "1,1",
-                nine: "1,1",
-                ten: "1,1"*/
-    }
+    $scope.addPair = function(){
+        $scope.inputBoxes.push('');
+        console.log($scope.inputBoxes)
+                console.log("Universe: " + $scope.universe)
 
-
+    };
     $scope.getResults = function () {
         var myJson = []
+        console.log("Universe: " + $scope.universe)
+        myJson.push($scope.universe);
 
+        var universe = myJson[0].split(',')
+        if (universe.length > 6) {
+            return alert('Menos de 6 elementos por favor')
+        }
         angular.forEach($scope.inputBoxes, function (element) {
             if (element) {
                 myJson.push(element);
@@ -27,11 +27,8 @@ app.controller('MainCtrl', function ($scope, $http) {
         });
 
         console.info(myJson)
-        var universe = (myJson[0].split(","))
         console.log(universe)
-        if (universe.length > 6) {
-            return alert('Menos de 6 elementos por favor')
-        }
+
 /*        
         for(let i = 1; i<myJson.length; i++){
             let pair = myJson[i].split(",")
@@ -49,4 +46,6 @@ app.controller('MainCtrl', function ($scope, $http) {
                 console.error(e)
             })
     }
+
+
 })

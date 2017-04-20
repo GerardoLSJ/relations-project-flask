@@ -31,39 +31,23 @@
         <form role="form">
           Conjunto
           <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.one" id="url-box" style="max-width: 200px;" required>
+            <input type="text" class="form-control" ng-model="universe" id="url-box" style="max-width: 200px;" required>
           </div>
-          Parejas
+
           <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.two" id="url-box" style="max-width: 200px;" required>
+            Agregar <button class="btn btn-success" ng-click="addPair()">+</button>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.three" id="url-box" style="max-width: 200px;" >
+                    <br>Parejas
+
+
+                    <br><br>
+          <div ng-repeat="inputBox in inputBoxes track by $index">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model= "inputBoxes[$index]" id="url-box" style="max-width: 200px;" required>
+            </div>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.four" id="url-box" style="max-width: 200px;" >
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.five" id="url-box" style="max-width: 200px;" >
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.six" id="url-box" style="max-width: 200px;" >
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.seven" id="url-box" style="max-width: 200px;" >
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.eight" id="url-box" style="max-width: 200px;" >
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.nine" id="url-box" style="max-width: 200px;" >
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.ten" id="url-box" style="max-width: 200px;" >
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="inputBoxes.eleven" id="url-box" style="max-width: 200px;" >
-          </div>
+          <div ng-bind = "inputBoxes"></div>
+
           <button ng-click="getResults()" class="btn btn-default">Submit</button>
         </form>
       </div>
@@ -115,9 +99,10 @@
 
   <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.js"></script>
+
   <script src="{{ url_for('static', filename='app.js') }}"></script>
   <script src="{{ url_for('static', filename='controllers.js') }}"></script>
 </body>
-
 </html>
