@@ -11,24 +11,17 @@ Automatically deployed to:
  # Documentacion
 
 ## Uso
- En el campo de "Conjunto" debera incluirse una lista de elementos (Numeros, letras o cadenas) separadas por coma. Los elementos son sensibles a mayusculas por lo que es diferente el elemento "Hola" de "hola".
-
-En los campos de elementos deberan ingresarse los elementos antes definidos separados por coma, en caso de no pertencer alguno o ambos de los elementos se mostrara un mensaje de error para que sea corregido.
-
-Para agregar mas parejas debera presionar el boton de "Agregar" el cual agregara mas casillas para poder ingresar mas relaciones. El numero de relaciones no tiene limite.
-
-Para ver las propiedades de las relaciones debera presionar el boton "Enviar" el cual enviara los datos por medio de una peticion a nuestro servidor y retornando los valores correspondientes que seran inmediatamente mostrados debajo.
-
-Podra repetir estre proceso para N numero de relaciones y/o conjuntos.
-
-Para limpiar los datos y regresar al estado inicial es tan facil como presionar el boton "Limpiar".
+En el campo de "Conjunto" deberá incluirse una lista de elementos (Números, letras o cadenas) separadas por coma. Los elementos son sensibles a mayúsculas por lo que es diferente el elemento "Hola" de "hola".
+En los campos de elementos deberán ingresarse los elementos antes definidos separados por coma, en caso de no pertenecer alguno o ambos de los elementos se mostrará un mensaje de error para que sea corregido.
+Para agregar más parejas deberá presionar el botón de "Agregar" el cual agregará más casillas para poder ingresar más relaciones. El número de relaciones no tiene límite.
+Para ver las propiedades de las relaciones deberá presionar el botón "Enviar" el cual enviara los datos por medio de una petición a nuestro servidor y retornando los valores correspondientes que serán inmediatamente mostrados debajo.
+Podrá repetir este proceso para N número de relaciones y/o conjuntos.
+Para limpiar los datos y regresar al estado inicial es tan fácil como presionar el botón "Limpiar".
 
 
 ## Descripción del proyecto
 
-La carpeta ENV es un entorno virtual para poder correr el proyecto de manera local utilizando Heroku con el comando "heroku local" esto es necesario
-porque nuestro repositorio automaticamente es sincronizado desde el Dashboard de Heroku por lo cual los cambios se refljean en cuestion de minutos en la aplicacion web en linea.
-
+La carpeta ENV es un entorno virtual para poder correr el proyecto de manera local utilizando Heroku con el comando "heroku local" esto es necesario porque nuestro repositorio automáticamente es sincronizado desde el Dashboard de Heroku por lo cual los cambios se reflejan en cuestión de minutos en la aplicación web en línea.
 Para correr el proyecto en local en cualquier computadora es necesario:
 
 > - tener python 2 o 3 instalado
@@ -43,10 +36,9 @@ pip install requirements.txt
  ```sh
  python app.py 
  ```
+Lo cual inicializa la aplicación y la corre en "localhost" ahora solo debemos entrar a la dirección en consola y estamos listos para usar la aplicación en local.
+Recordar que ya se encuentra en línea para su comodidad:
 
- Lo cual inicializa la aplicacion y la corre en "localhost" ahora solo debemos entrar a la direccion en consola y estamos listos para usar la aplicacion en local.
-
-  Recordar que ya se encuentra en linea para su comoidad:
 
   ```sh
  https://relations-project-stage.herokuapp.com/ 
