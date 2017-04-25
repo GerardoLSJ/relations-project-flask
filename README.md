@@ -31,8 +31,8 @@ porque nuestro repositorio automaticamente es sincronizado desde el Dashboard de
 
 Para correr el proyecto en local en cualquier computadora es necesario:
 
-tener python 2 o 3 instalado
-tener pip instalado 
+> - tener python 2 o 3 instalado
+> - tener pip instalado 
 
 y correr los comandos:
 ```sh
@@ -52,6 +52,22 @@ pip install requirements.txt
  https://relations-project-stage.herokuapp.com/ 
  ```
 
+## Funcionamiento de los algritmos en relaciones.py
+
+La forma en cómo se verifican las propiedades para cada relación ingresada, es en base a una matriz de adyacencia, la cual es generada por la función 'createBinaryMatrix’, que toma como parámetros un conjunto y las relaciones ingresadas, representando un 1 si están relacionados dos elementos y un 0 si no.
+Una ves generada la matriz, tenemos que:
+
+> - La reflexividad comprobada por la función ‘isReflexive’ verifica que en la diagonal principal todo elemento del conjunto se encuentre relacionado con sí mismo, o sea [i][i] = 1, para todo i.
+
+> - La irreflexividad es el caso contario, la función ‘isIrreflexive’  verifica que ningún elemento del conjunto esté relacionado consigo mismo.
+
+> - Para comprobar si es simétrica, la función ‘isSymmetric’ verifica que para toda relación [i][j]=1 en la matriz, exista también [j][i]=1.
+
+> - Su caso contrario, para ver si la matriz es asimétrica, la función ‘isAsimetric’ verifica que para toda relación [i][j]=1, no exista [j][i]=1.
+
+> - Para ver si es antisimétrica, la función ‘isAntisymmetric’, comprueba que si [i][j]=1 y [j][i]=1, entonces j=i.
+
+> - Finalmente, la transitividad comprobada por la función ‘isTransitive’, verifica que si [i][j]=1 y [j][k]=1, entonces [i][k]=1, para todo i,j,k.
 
  
 
